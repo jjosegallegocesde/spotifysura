@@ -1,10 +1,8 @@
 //DECLARANDO VARIABLES CON JS DESDE EL DOM
 
-let nombreUsuario="Juan Jose Gallego"
-let edadUsuario=34
-let estaturaUsuario=1.64
-let estaLloviendo=false
-let rh="O+"
+let usuarioBaseDatos="sura45"
+let contrasenaBaseDatos="12345"
+let correoBaseDatos="savelo@gmail.com"
 
 let botonFormulario=document.getElementById("botonIngreso")
 let cajaFormularioNombre=document.getElementById("nombre")
@@ -18,13 +16,28 @@ botonFormulario.addEventListener("click",function(evento){
     
     //1.capturamos la informacion del formulario
     let nombreUsuario=cajaFormularioNombre.value
-    console.log("el nombre de usuario es: "+nombreUsuario)
-
     let correoUsuario=cajaFormularioEmail.value
-    console.log("el correo de usuario es: "+correoUsuario)
-
     let passwordUsario=cajaFormularioPassword.value
-    console.log("la contraseña es: "+passwordUsario)
+
+    //validando los datos del uusuario
+    if(usuarioBaseDatos==nombreUsuario){
+        Swal.fire({
+            title: "Bienvenido "+nombreUsuario,
+            text: "Tus credenciales son correctas",
+            icon: "success"
+        })
+
+        window.location.href="./src/views/home.html"
+
+
+    }else{
+        Swal.fire({
+            icon: "error",
+            title: "Oops... "+nombreUsuario+"Tienes un problema",
+            text: "Verifica tus credenciales",
+            
+          });
+    }
 
 })
 
