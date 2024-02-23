@@ -20,14 +20,20 @@ botonFormulario.addEventListener("click",function(evento){
     let passwordUsario=cajaFormularioPassword.value
 
     //validando los datos del uusuario
-    if(usuarioBaseDatos==nombreUsuario){
+    if(usuarioBaseDatos==nombreUsuario && contrasenaBaseDatos==passwordUsario && correoBaseDatos==correoUsuario){
         Swal.fire({
             title: "Bienvenido "+nombreUsuario,
             text: "Tus credenciales son correctas",
             icon: "success"
         })
 
-        window.location.href="./src/views/home.html"
+        setTimeout(function(){
+            sessionStorage.setItem("nombre",nombreUsuario)
+            sessionStorage.setItem("password",passwordUsario)
+            sessionStorage.setItem("email",correoUsuario)
+            window.location.href="./src/views/home.html"
+        },1000)
+        
 
 
     }else{
