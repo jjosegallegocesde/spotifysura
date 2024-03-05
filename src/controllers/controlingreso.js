@@ -33,7 +33,7 @@ botonFormulario.addEventListener("click",function(evento){
             sessionStorage.setItem("email",correoUsuario)
             window.location.href="./src/views/home.html"
         },1000)
-        
+        x
 
 
     }else{
